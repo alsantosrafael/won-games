@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 	@font-face {
@@ -34,14 +34,16 @@ const GlobalStyles = createGlobalStyle`
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	html {
-		font-size: 62.5%; // Para usar o rem sem fazer cálculos com o valor básico
-	}
-  html, body, #__next {
-    height: 100%;
-  }
-	body {
-		font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	}
+	${({ theme }) => css`
+    html {
+      font-size: 62.5%; // Para usar o rem sem fazer cálculos com o valor básico
+    }
+
+    body {
+      font-family: ${theme.font.family};
+      font-size: ${theme.font.sizes.medium};
+    }
+  `}
 `;
+
 export default GlobalStyles;
