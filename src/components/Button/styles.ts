@@ -10,13 +10,13 @@ const wrapperModifiers = {
   medium: (theme: DefaultTheme) => css`
     height: 4rem;
     font-size: ${theme.font.sizes.small};
-    padding: ${theme.font.sizes.xsmall} ${theme.spacings.medium};
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
   `,
 
   large: (theme: DefaultTheme) => css`
     height: 5rem;
     font-size: ${theme.font.sizes.medium};
-    padding: ${theme.font.sizes.xsmall} ${theme.spacings.xlarge};
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.xlarge};
   `,
 };
 type WrapperProps = Pick<ButtonProps, 'size'>;
