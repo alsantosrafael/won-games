@@ -2,16 +2,19 @@ import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 
 import Button from '.';
+import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
 
 describe('<Button />', () => {
   it('it should render the medium sized button by default', () => {
-    renderWithTheme(<Button>Button</Button>);
+    const { container } = renderWithTheme(<Button>Button</Button>);
 
     expect(screen.getByRole('button', { name: /Button/i })).toHaveStyle({
       height: '4rem',
       fontSize: '1.4rem',
       padding: '0.8rem 3.2rem',
     });
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('it should render a full width button when prop is passed', () => {
@@ -20,6 +23,15 @@ describe('<Button />', () => {
     expect(screen.getByRole('button', { name: /Button/i })).toHaveStyle({
       width: '100%',
     });
+  });
+
+  it('it should render an icon version of the button when prop is passed', () => {
+    renderWithTheme(
+      <Button icon={<AddShoppingCart data-testid="icon" />}>Button</Button>,
+    );
+
+    expect(screen.getByText(/Button/i)).toBeInTheDocument();
+    expect(screen.getByTestId(/icon/i)).toBeInTheDocument();
   });
 
   it('it should render the larg sized button when when prop size =  large is passed', () => {
