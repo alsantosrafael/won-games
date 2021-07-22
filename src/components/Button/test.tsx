@@ -14,6 +14,14 @@ describe('<Button />', () => {
     });
   });
 
+  it('it should render a full width button when prop is passed', () => {
+    renderWithTheme(<Button fullWidth>Button</Button>);
+
+    expect(screen.getByRole('button', { name: /Button/i })).toHaveStyle({
+      width: '100%',
+    });
+  });
+
   it('it should render the larg sized button when when prop size =  large is passed', () => {
     renderWithTheme(<Button size="large">Button</Button>);
 
