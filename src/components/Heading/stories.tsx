@@ -1,5 +1,5 @@
 import Heading, { HeadingProps } from '.';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react/types-7-0';
 export default {
   title: 'Heading',
   component: Heading,

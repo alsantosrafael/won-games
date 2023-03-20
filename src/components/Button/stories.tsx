@@ -1,5 +1,5 @@
 import Button from '.';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react/types-7-0';
 import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
 export default {
   title: 'Button',
