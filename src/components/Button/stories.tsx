@@ -1,30 +1,34 @@
-import Button from '.';
-import { Story, Meta } from '@storybook/react/types-7-0';
-import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
+import { Story, Meta } from '@storybook/react/types-6-0'
+import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart'
+import Button from '.'
 export default {
   title: 'Button',
   component: Button,
   argTypes: {
     children: {
-      type: 'string',
+      type: 'string'
     },
     icon: {
-      type: '', // Só pra não ocupar a prop com texto
-    },
-  },
-} as Meta;
-
-export const Default: Story = (args) => <Button {...args} />;
-
+      type: ''
+    }
+  }
+} as unknown as Meta
+export const Default: Story = (args) => <Button {...args} />
 Default.args = {
-  children: 'Buy now',
-  size: 'medium',
-};
-
-export const withIcon: Story = (args) => <Button {...args} />;
-
+  children: 'Buy now'
+}
+export const withIcon: Story = (args) => <Button {...args} />
 withIcon.args = {
+  size: 'small',
   children: 'Buy now',
-  size: 'medium',
-  icon: <AddShoppingCart />,
-};
+  icon: <AddShoppingCart />
+}
+
+export const asLink: Story = (args) => <Button {...args} />
+
+asLink.args = {
+  size: 'large',
+  children: 'Buy now',
+  as: 'a',
+  href: '/link'
+}
