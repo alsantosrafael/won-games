@@ -5,11 +5,12 @@ module.exports = {
     config.resolve.modules.push(`${process.cwd()}/src`);
     return config;
   },
+  staticDirs: ['../public'],
   framework: {
     name: '@storybook/react-webpack5',
     options: {}
   },
   docs: {
     autodocs: true
-  }
+  },
 };
